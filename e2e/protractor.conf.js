@@ -1,26 +1,21 @@
-// @ts-check
-// Protractor configuration file, see link for more information
-// https://github.com/angular/protractor/blob/master/lib/config.ts
+const { SpecReporter } = require('jasmine-spec-reporter');
 
-const { SpecReporter, StacktraceOption } = require('jasmine-spec-reporter');
-
-/**
- * @type { import("protractor").Config }
- */
 exports.config = {
-  allScriptsTimeout: 11000,
+  allScriptsTimeout: 30000,
   specs: [
     './src/**/*.e2e-spec.ts'
   ],
   capabilities: {
-    browserName: 'chrome'
+    browserName: 'chrome',
+    acceptInsecureCerts: true
   },
   directConnect: true,
-  SELENIUM_PROMISE_MANAGER: false,
-  baseUrl: 'http://localhost:4200/',
+  baseUrl: 'https://padlet.com/lmarmane/xxdxcy7ac4ya4xhs',
   framework: 'jasmine',
   jasmineNodeOpts: {
+    showTiming: true,
     showColors: true,
+    includeStackTrace: true,
     defaultTimeoutInterval: 30000,
     print: function() {}
   },
@@ -30,7 +25,7 @@ exports.config = {
     });
     jasmine.getEnv().addReporter(new SpecReporter({
       spec: {
-        displayStacktrace: StacktraceOption.PRETTY
+        displayStacktrace: true
       }
     }));
   }

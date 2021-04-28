@@ -1,0 +1,1 @@
+npm run e2e-local && timeout /t 10 && call C:\Users\David\Proyectos\padlet\batch.bat 
